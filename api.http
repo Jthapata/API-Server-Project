@@ -3,5 +3,10 @@ Content-Type: application/json
 
 {
     "username": "admin",
-    "password": "asdf"
+    "password": "password"
 }
+
+
+###
+GET http://localhost:3000/cards?set=Base
+Content-Type: application/json

@@ -1,30 +1,27 @@
 const express = require('express')
-const jwt = require('jsonwebtoken')
 const { expressjwt } = require('express-jwt')
 
 const { users } = require('./data/users.json')
 const { cards } = require('./data/cards.json')
+const tokenRouter = require('./routes/getToken.routes')
+const cardsRouter = require('./routes/cards.routes')
 
 const app = express()
-
-const secret = 'SuperSecretSecret'
-
-app.use(express.json())
-app.use(express.static('./data'))
-app.use(express.static('./public'))
+configureServer()
+createRoutes()
 
 
-app.post('/getToken', (req, res) => {
-    const {username, password} = req.body
-    const user = users.find((currUser) => currUser.username === username)
-    if (!user || user.password !== password) {
-        return res.status(401).json({errorMessage: 'Invalid Credentials'})
-    }
-    const token = jwt.sign({username: user.username}, secret, {algorithm: 'HS256', expiresIn: '1d'})
-    return res.json({token: token})
-})
+function configureServer() {
+    app.use(express.json())
+    app.use(express.static('./data'))
+    app.use(express.static('./public'))
 
+    app.listen(3000, () => {
+        console.log('listening on port 3000')
+    })
+}
 
-app.listen(3000, () => {
-    console.log('listening on port 3000')
-})
+function createRoutes() {
+    app.use('/getToken', tokenRouter)
+    app.use('/cards', cardsRouter)
+}
