@@ -8,5 +8,65 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3000/cards?set=Base
+GET http://localhost:3000/cards
 Content-Type: application/json
+
+
+###
+Post http://localhost:3000/cards/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NTE2OTQ5LCJleHAiOjE3MTY2MDMzNDl9.11VAzP1oC2yx4GscqHxaPos1g6RT4jCUa5Zca-PXWrI
+Content-Type: application/json
+
+{
+    "name": "test creature",
+    "set": "Base Set",
+    "type": "Creature",
+    "power": 3000,
+    "toughness": 2500,
+    "rarity": "Common",
+    "cost": 3
+}
+
+
+###
+Post http://localhost:3000/cards/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NTE2OTQ5LCJleHAiOjE3MTY2MDMzNDl9.11VAzP1oC2yx4GscqHxaPos1g6RT4jCUa5Zca-PXWrI
+Content-Type: application/json
+
+{
+    "name": "test spell",
+    "set": "Base Set",
+    "type": "Spell",
+    "rarity": "Common",
+    "cost": 3
+}
+
+
+###
+PUT http://localhost:3000/cards/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NTE2OTQ5LCJleHAiOjE3MTY2MDMzNDl9.11VAzP1oC2yx4GscqHxaPos1g6RT4jCUa5Zca-PXWrI
+Content-Type: application/json
+
+{
+    "name": "test creature",
+    "set": "Base Set",
+    "type": "Creature",
+    "power": 3000,
+    "toughness": 2500,
+    "rarity": "Common",
+    "cost": 3
+}
+
+
+###
+PUT http://localhost:3000/cards/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NTE2OTQ5LCJleHAiOjE3MTY2MDMzNDl9.11VAzP1oC2yx4GscqHxaPos1g6RT4jCUa5Zca-PXWrI
+Content-Type: application/json
+
+{
+    "name": "test spell",
+    "set": "test Set",
+    "type": "Spell",
+    "rarity": "Common",
+    "cost": 3
+}
