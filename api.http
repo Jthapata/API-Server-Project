@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ###
 Post http://localhost:3000/cards/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NTE2OTQ5LCJleHAiOjE3MTY2MDMzNDl9.11VAzP1oC2yx4GscqHxaPos1g6RT4jCUa5Zca-PXWrI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NjA4MDcwLCJleHAiOjE3MTY2OTQ0NzB9.ZelQ4V4T9pgDhnxo4F-uHLCFGnQbVP0awJPavnMRyXQ
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 
 ###
 Post http://localhost:3000/cards/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NTE2OTQ5LCJleHAiOjE3MTY2MDMzNDl9.11VAzP1oC2yx4GscqHxaPos1g6RT4jCUa5Zca-PXWrI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NjA4MDcwLCJleHAiOjE3MTY2OTQ0NzB9.ZelQ4V4T9pgDhnxo4F-uHLCFGnQbVP0awJPavnMRyXQ
 Content-Type: application/json
 
 {
@@ -44,7 +44,7 @@ Content-Type: application/json
 
 ###
 PUT http://localhost:3000/cards/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NTE2OTQ5LCJleHAiOjE3MTY2MDMzNDl9.11VAzP1oC2yx4GscqHxaPos1g6RT4jCUa5Zca-PXWrI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NjA4MDcwLCJleHAiOjE3MTY2OTQ0NzB9.ZelQ4V4T9pgDhnxo4F-uHLCFGnQbVP0awJPavnMRyXQ
 Content-Type: application/json
 
 {
@@ -60,7 +60,7 @@ Content-Type: application/json
 
 ###
 PUT http://localhost:3000/cards/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NTE2OTQ5LCJleHAiOjE3MTY2MDMzNDl9.11VAzP1oC2yx4GscqHxaPos1g6RT4jCUa5Zca-PXWrI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NjA4MDcwLCJleHAiOjE3MTY2OTQ0NzB9.ZelQ4V4T9pgDhnxo4F-uHLCFGnQbVP0awJPavnMRyXQ
 Content-Type: application/json
 
 {
@@ -70,3 +70,8 @@ Content-Type: application/json
     "rarity": "Common",
     "cost": 3
 }
+
+
+###
+DELETE http://localhost:3000/cards/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE2NjA4MDcwLCJleHAiOjE3MTY2OTQ0NzB9.ZelQ4V4T9pgDhnxo4F-uHLCFGnQbVP0awJPavnMRyXQ

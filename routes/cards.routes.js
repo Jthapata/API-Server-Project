@@ -8,6 +8,16 @@ let { cards } = require('../data/cards.json')
 dotenv.config()
 const secret = process.env.secret
 
+function checkForId(id) {
+    let exists = false
+    cards.forEach((card) => {
+        if (card.id === id) {
+            exists = true
+        }
+    })
+    return exists
+}
+
 cardsRouter.get('/', (req, res) => {
     const { id, name, set, cardNumber, type, power, toughness, rarity, cost } = req.query
     const filteredCards = cards.filter(card => {
@@ -54,12 +64,15 @@ cardsRouter.post('/create',
         const file = fs.createWriteStream('./data/cards.json')
         file.write(JSON.stringify(newObject))
         res.send("Successfully Created Card")
-})
+    })
 
 cardsRouter.put('/:id',
     expressjwt({ secret: secret, algorithms: ['HS256'] }),
     (req, res) => {
         const id = Number(req.params.id)
+        if (!checkForId(id)) {
+            return res.status(500).json({errorMessage: "Card not found"})
+        }
         const { name, set, type, power, toughness, rarity, cost } = req.body
         if (!name || !set || !type || !rarity || !cost) {
             return res.status(500).json({ errorMessage: "Insufficient amount of parameters" })
@@ -84,10 +97,24 @@ cardsRouter.put('/:id',
         newObject.cards = cards
         const file = fs.createWriteStream('./data/cards.json')
         file.write(JSON.stringify(newObject))
-        res.send('Successfully Updated card')
+        res.send('Successfully Updated Card')
     }
 )
 
-//create route to delete cards
+cardsRouter.delete('/:id',
+    expressjwt({ secret: secret, algorithms: ['HS256'] }),
+    (req, res) => {
+        const id = Number(req.params.id)
+        if (!checkForId(id)) {
+            return res.status(500).json({errorMessage: "Card not found"})
+        }
+        const newArray = cards.filter((card) => card.id !== id)
+        const newObject = {}
+        newObject.cards = newArray
+        const file = fs.createWriteStream('./data/cards.json')
+        file.write(JSON.stringify(newObject))
+        res.send('Successfully Deleted Card')
+    }
+)
 
 module.exports = cardsRouter
